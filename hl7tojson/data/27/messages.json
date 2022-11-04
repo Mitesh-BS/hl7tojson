@@ -124,7 +124,7 @@
         },
         {
           "name": "DB1",
-          "desc": "Disability Information",
+          "desc": "Disability Infation",
           "min": 0,
           "max": 0
         },
@@ -23083,6 +23083,239 @@
                   ]
                 }
               ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "ORM_O01": {
+    "desc": "Pharmacy/treatment order message",
+    "name": "ORM_O01",
+    "segments": {
+      "desc": "Pharmacy/treatment order message",
+      "segments": [
+        {
+          "name": "MSH",
+          "desc": "Message Header",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "UAC",
+          "desc": "User Authentication Credential",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "NTE",
+          "desc": "Notes and Comments",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "PATIENT",
+          "desc": "patient",
+          "min": 0,
+          "max": 1,
+          "children": [
+            {
+              "name": "PID",
+              "desc": "Patient Identification",
+              "min": 1,
+              "max": 1
+            },
+            {
+              "name": "PD1",
+              "desc": " Patient Additional Demographic",
+              "min": 0,
+              "max": 1
+            },
+            {
+              "name": "NTE",
+              "desc": "Notes and Comments",
+              "min": 0,
+              "max": 1
+            },
+            {
+              "name": "PATIENT VISIT",
+              "desc": "patient visit",
+              "min": 0,
+              "max": 0,
+              "children": [
+                {
+                  "name": "PV1",
+                  "desc": "Patient Visit",
+                  "min": 1,
+                  "max": 1
+                },
+                {
+                  "name": "PV2",
+                  "desc": "Patient Visit - Additional Information",
+                  "min": 0,
+                  "max": 1
+                }
+              ]
+            },
+            { 
+              "name": "Insurance",
+              "desc": "insurance",
+              "min": 0,
+              "max": 0,
+              "children": [
+                {
+                  "name": "IN1",
+                  "desc": "Insurance",
+                  "min": 1,
+                  "max": 1
+                },
+                {
+                  "name": "IN2",
+                  "desc": "Insurance Additional Information",
+                  "min": 0,
+                  "max": 1
+                },
+                {
+                  "name": "AL3",
+                  "desc": "Insurance Additional Information, Certification",
+                  "min": 0,
+                  "max": 1
+                }
+              ]
+            },
+            {
+              "name": "GT1",
+              "desc": "Guarantor",
+              "min": 0,
+              "max": 1
+            },
+            {
+              "name": "AL1",
+              "desc": "Patient Allergy Information",
+              "min": 0,
+              "max": 1
+            }      
+          ]
+        },
+        {
+          "name": "ORDER",
+          "desc": "order",
+          "min": 1,
+          "max": 1,
+          "children": [
+            {
+              "name": "ORC",
+              "desc": "Common Order",
+              "min": 0,
+              "max": 1
+            },
+            {
+              "name": "ORDER DETAIL",
+              "desc": "order details",
+              "min": 0,
+              "max": 0,
+              "children": [
+                {
+                  "name": "ORDER DETAIL SEGMENT",
+                  "desc": "order detail segment",
+                  "min": 1,
+                  "max": 1,
+                  "children": [
+                    {
+                      "name": "ORB",
+                      "desc": "Observation Request",
+                      "min": 0,
+                      "max": 1
+                    },
+                    {
+                      "name": "RQD",
+                      "desc": "Requisition Detail",
+                      "min": 0,
+                      "max": 1
+                    },
+                    {
+                      "name": "RQ1",
+                      "desc": "Requisition Detail-1",
+                      "min": 0,
+                      "max": 1
+                    },
+                    {
+                      "name": "RXO",
+                      "desc": "Pharmacy/Treatment Order",
+                      "min": 0,
+                      "max": 1
+                    },
+                    {
+                      "name": "ODS",
+                      "desc": "Dietary Orders, Supplements, and Preferences",
+                      "min": 0,
+                      "max": 1
+                    },
+                    {
+                      "name": "ODT",
+                      "desc": "Diet Tray Instructions",
+                      "min": 0,
+                      "max": 1
+                    }
+                  ]
+                },
+                {
+                  "name": "NTE",
+                  "desc": "Notes and Comments",
+                  "min": 0,
+                  "max": 1
+                },
+                {
+                  "name": "CTD",
+                  "desc": "Contact Data",
+                  "min": 0,
+                  "max": 1
+                },
+                {
+                  "name": "DG1",
+                  "desc": "Diagnosis",
+                  "min": 0,
+                  "max": 1
+                },
+                {
+                  "name": "OBSERVATION",
+                  "desc": "observation",
+                  "min": 0,
+                  "max": 1,
+                  "children": [
+                    {
+                      "name": "OBX",
+                      "desc": "Observation/Result",
+                      "min": 1,
+                      "max": 1
+                    },
+                    {
+                      "name": "NTE",
+                      "desc": "Notes and Comments",
+                      "min": 0,
+                      "max": 1
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "FT1",
+              "desc": "Financial Transaction",
+              "min": 0,
+              "max": 1
+            },
+            {
+              "name": "CTI",
+              "desc": "Clinical Trial Identification",
+              "min": 0,
+              "max": 1
+            },
+            {
+              "name": "BLG",
+              "desc": "Billing",
+              "min": 0,
+              "max": 1
             }
           ]
         }

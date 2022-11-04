@@ -10,13 +10,12 @@ HL7_VERSION = '27'
 FILE_PATH = dirname(__file__)
 
 import pickle
-import json
 
 with open('{}/data/{}/fields.pickle'.format(FILE_PATH, HL7_VERSION), "rb") as f:
     fields = pickle.load(f)
 
-with open('{}/data/{}/messages.json'.format(FILE_PATH, HL7_VERSION), "rb") as f:
-    messages = json.load(f)
+with open('{}/data/{}/messages.pickle'.format(FILE_PATH, HL7_VERSION), "rb") as f:
+    messages = pickle.load(f)
 
 with open('{}/data/{}/segments.pickle'.format(FILE_PATH, HL7_VERSION), "rb") as f:
     segments = pickle.load(f)
@@ -24,8 +23,8 @@ with open('{}/data/{}/segments.pickle'.format(FILE_PATH, HL7_VERSION), "rb") as 
 
 def parse(message):
     sequence = parse_hl7_message(message)
-    # if not validate_segments(sequence):
-    #     raise Exception('The message is invalid')
+    if not validate_segments(sequence):
+        raise Exception('The message is invalid')
 
     sequence_with_description = update_description(0, sequence)
     data = hl7_message_to_dict(sequence_with_description)
@@ -48,7 +47,7 @@ def validate_segments(message):
 
     message_type = '{}_{}'.format(message[0][9][0][0], message[0][9][0][1])
     allow_segments = [
-        print(segment['name'])
+        segment['name']
         for segment in messages[str(message_type)]['segments']['segments']
     ]
     actual_segments = [str(segment[0]) for segment in message]
