@@ -10,13 +10,12 @@ HL7_VERSION = '27'
 FILE_PATH = dirname(__file__)
 
 import pickle
-import json
 
 with open('{}/data/{}/fields.pickle'.format(FILE_PATH, HL7_VERSION), "rb") as f:
     fields = pickle.load(f)
 
 with open('{}/data/{}/messages.pickle'.format(FILE_PATH, HL7_VERSION), "rb") as f:
-    messages = json.load(f)
+    messages = pickle.load(f)
 
 with open('{}/data/{}/segments.pickle'.format(FILE_PATH, HL7_VERSION), "rb") as f:
     segments = pickle.load(f)
